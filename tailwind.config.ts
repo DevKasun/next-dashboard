@@ -14,7 +14,7 @@ const config: Config = {
         kBlack: "#222831",
         kBrightGray: "#393E46",
         kBlue: "#00ADB5",
-        foregroundColor: "#EEEEEE",
+        kBackgroundWhite: "#EEEEEE",
       },
     },
   },

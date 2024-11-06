@@ -1,8 +1,11 @@
-interface SearchIconProps {
+import { cn } from "@/app/util";
+
+interface iconProps {
   classNames?: string;
+  iconColor?: string;
 }
 
-export default function SearchIcon({ classNames }: SearchIconProps) {
+export default function SearchIcon({ classNames, iconColor }: iconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +13,7 @@ export default function SearchIcon({ classNames }: SearchIconProps) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-5 h-5 {classNames}"
+      className={cn("w-5 h-5", iconColor || "text-kBlack", classNames)}
     >
       <path
         strokeLinecap="round"

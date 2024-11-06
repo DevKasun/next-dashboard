@@ -1,4 +1,11 @@
-export default function AvatarIcon() {
+import { cn } from "@/app/util";
+
+interface iconProps {
+  classNames?: string;
+  iconColor?: string;
+}
+
+export default function AvatarIcon({ classNames, iconColor }: iconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +13,7 @@ export default function AvatarIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="size-6"
+      className={cn("w-5 h-5", iconColor || "text-kBlack", classNames)}
     >
       <path
         strokeLinecap="round"
