@@ -17,8 +17,19 @@ export default function Sidebar() {
           </div>
         </Link>
       </div>
-      <menu>
-        <li></li>
+      <menu className="px-8 py-10">
+        <li>
+          <Link href="/dashboard">Dashboard</Link>
+        </li>
+        <li>
+          <Link href="/dashboard">Expenses</Link>
+        </li>
+        <li>
+          <Link href="/dashboard">Reports</Link>
+        </li>
+        <li>
+          <Link href="/dashboard">Settings</Link>
+        </li>
       </menu>
     </aside>
   );
