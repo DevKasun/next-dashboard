@@ -4,6 +4,55 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import HomeIcon from "../icons/home-icon";
+import CashIcon from "../icons/cash-icon";
+import ReportIcon from "../icons/reports-icon";
+import SettingsIcon from "../icons/settings-icon";
+import NavLink from "./navlink";
+
+const navItems = [
+  {
+    href: "/dashboard",
+    icon: (isActive: boolean) => (
+      <HomeIcon
+        iconColor="text-kBlue font-medium"
+        className={isActive ? "text-kBlue" : "text-black"}
+      />
+    ),
+    label: "Dashboard",
+  },
+  {
+    href: "/dashboard/expenses",
+    icon: (isActive: boolean) => (
+      <CashIcon
+        iconColor="text-kBlue font-medium"
+        classNames={isActive ? "text-kBlue" : "text-black"}
+      />
+    ),
+    label: "Expenses",
+  },
+  {
+    href: "/dashboard/reports",
+    icon: (isActive: boolean) => (
+      <ReportIcon
+        iconColor="text-kBlue font-medium"
+        classNames={isActive ? "text-kBlue" : "text-black"}
+      />
+    ),
+    label: "Reports",
+  },
+  {
+    href: "/dashboard/settings",
+    icon: (isActive: boolean) => (
+      <SettingsIcon
+        iconColor="text-kBlue font-medium"
+        classNames={isActive ? "text-kBlue" : "text-black"}
+      />
+    ),
+    label: "Settings",
+  },
+];
+
 export default function Sidebar() {
   const pathname = usePathname();
   return (
@@ -21,39 +70,16 @@ export default function Sidebar() {
           </div>
         </Link>
       </div>
+
       <menu className=" py-6">
-        <li>
-          <Link
-            href="/dashboard"
-            className={`block px-8 py-4 ${pathname === "/dashboard" ? "bg-kBlue font-bold" : ""}`}
-          >
-            Dashboard
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/dashboard/expenses"
-            className={`block px-8 py-4 ${pathname === "/dashboard/expenses" ? "bg-kBlue font-bold" : ""}`}
-          >
-            Expenses
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/dashboard/reports"
-            className={`block px-8 py-4 ${pathname === "/dashboard/reports" ? "bg-kBlue font-bold" : ""}`}
-          >
-            Reports
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/dashboard/settings"
-            className={`block px-8 py-4 ${pathname === "/dashboard/settings" ? "bg-kBlue font-bold" : ""}`}
-          >
-            Settings
-          </Link>
-        </li>
+        {navItems.map((item) => (
+          <NavLink
+            key={item.href}
+            href={item.href}
+            icon={item.icon(pathname === item.href)}
+            label={item.label}
+          />
+        ))}
       </menu>
     </aside>
   );
