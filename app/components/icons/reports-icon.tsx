@@ -1,11 +1,11 @@
 import { cn } from "@/app/util";
 
 interface iconProps {
-  classNames?: string;
+  className?: string;
   iconColor?: string;
 }
 
-export default function SearchIcon({ classNames, iconColor }: iconProps) {
+export default function SearchIcon({ className, iconColor }: iconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +13,7 @@ export default function SearchIcon({ classNames, iconColor }: iconProps) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={cn("w-5 h-5", iconColor || "text-kBlack", classNames)}
+      className={cn("w-5 h-5", iconColor || "text-kBlack", className)}
     >
       <path
         strokeLinecap="round"

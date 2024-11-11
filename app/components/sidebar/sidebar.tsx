@@ -26,7 +26,7 @@ const navItems = [
     icon: (isActive: boolean) => (
       <CashIcon
         iconColor="text-kBlue font-medium"
-        classNames={isActive ? "text-kBlue" : "text-black"}
+        className={isActive ? "text-kBlue" : "text-black"}
       />
     ),
     label: "Expenses",
@@ -36,7 +36,7 @@ const navItems = [
     icon: (isActive: boolean) => (
       <ReportIcon
         iconColor="text-kBlue font-medium"
-        classNames={isActive ? "text-kBlue" : "text-black"}
+        className={isActive ? "text-kBlue" : "text-black"}
       />
     ),
     label: "Reports",
@@ -46,7 +46,7 @@ const navItems = [
     icon: (isActive: boolean) => (
       <SettingsIcon
         iconColor="text-kBlue font-medium"
-        classNames={isActive ? "text-kBlue" : "text-black"}
+        className={isActive ? "text-kBlue" : "text-black"}
       />
     ),
     label: "Settings",
