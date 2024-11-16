@@ -1,4 +1,4 @@
-import { cn } from "@/app/util";
+import { cx } from "@/app/lib/util";
 
 interface iconProps {
   className?: string;
@@ -13,7 +13,7 @@ export default function SearchIcon({ className, iconColor }: iconProps) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={cn("w-5 h-5", iconColor || "text-kBlack", className)}
+      className={cx("w-5 h-5", iconColor || "text-kBlack", className)}
     >
       <path
         strokeLinecap="round"
