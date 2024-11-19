@@ -1,7 +1,7 @@
 import MaxWidthWrapper from "../components/common/max-width-wrapper";
+import ExpenseCategoryTrend from "../components/dashboard/expense-trend-category";
 import ExpenseTrends from "../components/dashboard/expense-trends";
 import Summary from "../components/dashboard/summary";
-import SummaryBox from "../components/dashboard/summary-box";
 import DashboardLayout from "./dashboard-layout";
 
 export default function Dashboard() {
@@ -10,8 +10,9 @@ export default function Dashboard() {
       <MaxWidthWrapper>
         <div className="flex flex-col gap-8">
           <Summary />
-          <div>
+          <div className="flex gap-8">
             <ExpenseTrends />
+            <ExpenseCategoryTrend />
           </div>
         </div>
       </MaxWidthWrapper>
