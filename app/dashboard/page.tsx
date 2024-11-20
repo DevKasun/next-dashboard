@@ -1,6 +1,7 @@
 import MaxWidthWrapper from "../components/common/max-width-wrapper";
 import ExpenseCategoryTrend from "../components/dashboard/expense-trend-category";
 import ExpenseTrends from "../components/dashboard/expense-trends";
+import RecentTransactions from "../components/dashboard/recent-transactions";
 import Summary from "../components/dashboard/summary";
 import DashboardLayout from "./dashboard-layout";
 
@@ -14,6 +15,7 @@ export default function Dashboard() {
             <ExpenseTrends />
             <ExpenseCategoryTrend />
           </div>
+          <RecentTransactions />
         </div>
       </MaxWidthWrapper>
     </DashboardLayout>
