@@ -11,80 +11,68 @@ import {
 export function RecentTransactionTable() {
   const data: Array<{
     id: number;
-    name: string;
-    sales: string;
-    region: string;
-    status: string;
-    deltaType: string;
-    hours: number;
+    date: string;
+    description: string;
+    category: string;
+    amount: number;
   }> = [
     {
       id: 1,
-      name: "Peter McCrown",
-      sales: "1,000,000",
-      region: "Region A",
-      status: "overperforming",
-      deltaType: "moderateIncrease",
-      hours: 100,
+      date: "2024-01-15",
+      description: "Grocery Shopping",
+      category: "Food & Groceries",
+      amount: -125.5,
     },
     {
       id: 2,
-      name: "Jon Mueller",
-      sales: "2,202,000",
-      region: "Region B",
-      status: "overperforming",
-      deltaType: "moderateIncrease",
-      hours: 110,
+      date: "2024-01-14",
+      description: "Salary Deposit",
+      category: "Income",
+      amount: 3500.0,
     },
     {
       id: 3,
-      name: "Peter Federer",
-      sales: "1,505,000",
-      region: "Region C",
-      status: "underperforming",
-      deltaType: "moderateDecrease",
-      hours: 90,
+      date: "2024-01-13",
+      description: "Electric Bill",
+      category: "Utilities",
+      amount: -85.2,
     },
     {
       id: 4,
-      name: "Maxime Bujet",
-      sales: "500,000",
-      region: "Region D",
-      status: "overperforming",
-      deltaType: "moderateDecrease",
-      hours: 92,
+      date: "2024-01-12",
+      description: "Coffee Shop",
+      category: "Dining",
+      amount: -4.5,
     },
     {
       id: 5,
-      name: "Emma Nelly",
-      sales: "600,000",
-      region: "Region E",
-      status: "underperforming",
-      deltaType: "moderateDecrease",
-      hours: 95,
+      date: "2024-01-11",
+      description: "Online Shopping",
+      category: "Shopping",
+      amount: -67.99,
     },
   ];
   return (
     <Table>
       <TableHead>
         <TableRow>
-          <TableHeaderCell>Name</TableHeaderCell>
-          <TableHeaderCell>Sales ($)</TableHeaderCell>
-          <TableHeaderCell>Region</TableHeaderCell>
-          <TableHeaderCell>Status</TableHeaderCell>
-          <TableHeaderCell className="text-right">
-            Working Hours (h)
-          </TableHeaderCell>
+          <TableHeaderCell>Date</TableHeaderCell>
+          <TableHeaderCell>Description</TableHeaderCell>
+          <TableHeaderCell>Category</TableHeaderCell>
+          <TableHeaderCell>amount</TableHeaderCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {data.map((item) => (
           <TableRow key={item.id}>
-            <TableCell>{item.name}</TableCell>
-            <TableCell className="text-right">{item.sales}</TableCell>
-            <TableCell>{item.region}</TableCell>
-            <TableCell>{item.status}</TableCell>
-            <TableCell className="text-right">{item.hours}</TableCell>
+            <TableCell>{item.date}</TableCell>
+            <TableCell>{item.description}</TableCell>
+            <TableCell>{item.category}</TableCell>
+            <TableCell
+              className={item.amount < 0 ? "text-red-500" : "text-green-500"}
+            >
+              ${Math.abs(item.amount).toFixed(2)}
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
